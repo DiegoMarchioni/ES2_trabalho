@@ -1,0 +1,24 @@
+.testimonial-section {
+    padding: 2rem;
+    background: #fff;
+    text-align: center;
+}
+
+.testimonial-section h2 {
+    margin-bottom: 1rem;
+}
+
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background: #f8f8f8;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-style: italic;
+}

@@ -1,0 +1,10 @@
+.reservation-section {
+    background: #f1faee;
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.reservation-section h2 {
+    margin-bottom: 1rem;
+}

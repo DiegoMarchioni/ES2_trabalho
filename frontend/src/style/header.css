@@ -1,0 +1,134 @@
+/* Geral do Header */
+.header {
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Topo do Header */
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(45deg, #e63946, #f77f00);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo img {
+    height: 60px;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Menu de Navegação */
+  .menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu ul li {
+    margin: 0 15px;
+    position: relative;
+  }
+  
+  .menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .menu ul li a:hover {
+    color: #ffd166;
+  }
+  
+  /* Dropdown do Submenu */
+  .submenu:hover .dropdown {
+    display: block;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 10;
+  }
+  
+  .dropdown li {
+    margin: 0;
+  }
+  
+  .dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    white-space: nowrap;
+  }
+  
+  .dropdown li a:hover {
+    background: #1d3557;
+  }
+  
+  /* Banner com Imagem de Fundo */
+  .banner {
+    position: relative;
+    height: 500px;
+    background: url('https://via.placeholder.com/1200x500') no-repeat center center/cover;
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .banner-content {
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  .banner-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .banner-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  /* Botão Primário */
+  .btn-primary {
+    background: #ffd166;
+    color: #333;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background: #f4a261;
+  }
+  
