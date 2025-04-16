@@ -13,9 +13,9 @@ function Header() {
         </div>
         <nav className="menu">
           <ul>
-            <li><Link to="/cardapio">Galeria</Link></li>
-            <li><Link to="/reservas">Galeria</Link></li>
-            <li><Link to="/sobre">Galeria</Link></li>
+            <li><Link to="/cardapio">Cardapio</Link></li>
+            <li><Link to="/reservas">Reservas</Link></li>
+            <li><Link to="/sobre">Sobre</Link></li>
             <li><Link to="/galeria">Galeria</Link></li>
           </ul>
         </nav>

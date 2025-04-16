@@ -8,6 +8,8 @@ import Galeria from './pages/galeria';
 import Sobre from './pages/sobre';
 import Reservas from './pages/reservas';
 import Cardapio from './pages/cardapio';
+import Carrinho from './pages/carrinho';
+
 
 import './App.css';
 
@@ -23,6 +25,7 @@ function App() {
             <Route path="/galeria" element={<Galeria />} />
             <Route path="/reservas" element={<Reservas />} />
             <Route path="/cardapio" element={<Cardapio />} />
+            <Route path="/carrinho" element={<Carrinho />} />
           </Routes>
         </main>
         <Footer />
