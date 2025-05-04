@@ -17,7 +17,7 @@ function Header() {
             <li><Link to="/cardapio">Cardapio</Link></li>
             <li><Link to="/reservas">Reservas</Link></li>
             <li><Link to="/sobre">Sobre</Link></li>
-            <li><Link to="/galeria">Galeria</Link></li>
+            <li><Link to="/entrega">Entrega</Link></li>
             <li><Link to="/carrinho">Carrinho</Link></li>
           </ul>
         </nav>
