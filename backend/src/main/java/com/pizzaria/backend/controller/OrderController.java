@@ -1,6 +1,8 @@
 package com.pizzaria.backend.controller;
 
 import com.pizzaria.backend.model.Order;
+import com.pizzaria.backend.model.OrderItem;
+import com.pizzaria.backend.repository.OrderItemRepository;
 import com.pizzaria.backend.service.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +16,11 @@ import java.util.List;
 public class OrderController {
 
     private final OrderService orderService;
-
-    public OrderController(OrderService orderService) {
+    private final OrderItemRepository orderItemRepository;
+    
+    public OrderController(OrderService orderService, OrderItemRepository orderItemRepository) {
         this.orderService = orderService;
+        this.orderItemRepository = orderItemRepository;
     }
 
     @PostMapping
@@ -33,20 +37,22 @@ public class OrderController {
         }
     }
     @GetMapping
-    public ResponseEntity<Order> getOrder() {
-        return ResponseEntity.ok(orderService.getForAuthenticatedUser());
+    public ResponseEntity<List<OrderItem>> getOrder() {
+    	Order order = orderService.getForAuthenticatedUser();
+        return ResponseEntity.ok(orderItemRepository.findAllByOrder(order));
     }
     
     public ResponseEntity<List<Order>> getAllOrders() {
         return ResponseEntity.ok(orderService.getAllForAuthenticatedUser());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/confirmPay/{id}")
     public ResponseEntity<?> getOrderById(@PathVariable Long id) {
         try {
-            return orderService.getById(id)
-                    .map(ResponseEntity::ok)
-                    .orElse(ResponseEntity.notFound().build());
+            Order order =orderService.getById(id).orElseThrow();
+            order.setPaid(true);
+            orderService.update(order);
+            return ResponseEntity.ok("Success in payment");
         } catch (AccessDeniedException e) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
         }

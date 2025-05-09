@@ -1,6 +1,5 @@
 package com.pizzaria.backend.service;
 
-import com.pizzaria.backend.model.Dish;
 import com.pizzaria.backend.model.OrderItem;
 import com.stripe.Stripe;
 import com.stripe.model.checkout.Session;
@@ -15,6 +14,7 @@ import org.springframework.stereotype.Service;
 public class StripeService {
 
     public StripeService(@Value("${stripe.api.key}") String secretKey) {
+    	System.out.println(secretKey);
         Stripe.apiKey = secretKey;
     }
 
@@ -37,8 +37,8 @@ public class StripeService {
         // Criação da sessão de pagamento com todos os pratos
         SessionCreateParams params = SessionCreateParams.builder()
                 .setMode(SessionCreateParams.Mode.PAYMENT)
-                .setSuccessUrl("http://localhost:8080/success.html")
-                .setCancelUrl("http://localhost:8080/cancel.html")
+                .setSuccessUrl("http://localhost:3000/success?id="+orderItems.get(0).getId())
+                .setCancelUrl("http://localhost:3000/")
                 .addLineItem(lineItemBuilder.build()) // Adiciona os itens na sessão
                 .build();
 

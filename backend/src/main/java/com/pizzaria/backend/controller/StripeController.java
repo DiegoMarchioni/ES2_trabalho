@@ -14,13 +14,14 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin
+@RequestMapping("/create-checkout-session")
 public class StripeController {
 
     @Autowired
     private StripeService stripeService;
 
-    @PostMapping("/create-checkout-session")
-    public ResponseEntity createCheckoutSession(@RequestBody @Valid List<OrderItem> orderItems) throws Exception {
+    @PostMapping
+    public ResponseEntity createCheckoutSession(@RequestBody List<OrderItem> orderItems) throws Exception {
         String sessionId = stripeService.createCheckoutSession(orderItems);
         return ResponseEntity.ok(Map.of("id", sessionId));
     }

@@ -7,6 +7,9 @@ import com.pizzaria.backend.model.User.User;
 import com.pizzaria.backend.repository.AddressRepository;
 import com.pizzaria.backend.repository.OrderItemRepository;
 import com.pizzaria.backend.repository.OrderRepository;
+
+import jakarta.transaction.Transactional;
+
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +30,8 @@ public class OrderItemService {
         this.orderService = orderService;
         this.addressRepository = addressRepository;
     }
-
+    
+    @Transactional
     public OrderItem save(OrderItem item) throws Exception {
         User user = getAuthenticatedUser();
         
@@ -41,9 +45,9 @@ public class OrderItemService {
         	if(ord.isPaid() == false)order = ord;
         }
         if(order == null)
-        order = orderService.save(new Order(false, false, user, addresses.get(0)));
-        
+        order = orderRepository.save(new Order(false, false, user, addresses.get(0)));
         item.setOrder(order);
+
         return orderItemRepository.save(item);
     }
 

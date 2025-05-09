@@ -42,7 +42,6 @@ public class OrderService {
 
         order.setUser(user);
         order.setDeliveryAddress(address);
-        order.getItems().forEach(item -> item.setOrder(order));
         return orderRepository.save(order);
     }
 
@@ -63,7 +62,10 @@ public class OrderService {
         }
         return orderOpt;
     }
-
+    public Order update(Order order) {
+    	orderRepository.save(order);
+    	return order;
+    }
     private User getAuthenticatedUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof User user) {

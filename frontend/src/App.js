@@ -11,6 +11,7 @@ import Cardapio from './pages/cardapio';
 import Carrinho from './pages/carrinho';
 import Pagamento from './pages/pagamento';
 import AddressForm from './pages/addressform';
+import Success from './pages/success';
 
 import './App.css';
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/carrinho" element={<Carrinho />} />
             <Route path="/pagamento" element={<Pagamento />} />
             <Route path="/cadastro-endereco" element={<AddressForm />} />
+            <Route path="/success" element={<Success />} />
           </Routes>
         </main>
         <Footer />

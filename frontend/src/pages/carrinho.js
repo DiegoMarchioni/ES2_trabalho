@@ -117,8 +117,15 @@ function Carrinho() {
       .then((res) => res.json())
       .then((orders) => {
         // Pega o último pedido com items
-        console.log(orders);
-        setCartItems(orders.items);
+        let formattedOrders = [];
+        orders.forEach(order => {
+            let index = formattedOrders.findIndex(formatOrder => order.dish.id === formatOrder.dish.id);
+            if(index === -1)formattedOrders.push(order);
+            else {
+              formattedOrders[index].quantity += 1;
+            }
+        });
+        setCartItems(formattedOrders);
         
       })
       .catch((err) => console.error('Erro ao buscar pedidos:', err));

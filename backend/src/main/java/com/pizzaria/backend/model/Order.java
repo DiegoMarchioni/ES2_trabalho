@@ -37,8 +37,7 @@ public class Order {
     @ManyToOne
     private Address deliveryAddress;
     
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderItem> items = new ArrayList<>();
+
 
     public Order(boolean isPaid, boolean isDelivered, User user, Address deliveryAddress){
     	this.isPaid = isPaid;
@@ -87,13 +86,9 @@ public class Order {
 		this.deliveryAddress = deliveryAddress;
 	}
 
-	public List<OrderItem> getItems() {
-		return items;
-	}
 
-	public void setItems(List<OrderItem> items) {
-		this.items = items;
-	}
+
+
     
     
 }
