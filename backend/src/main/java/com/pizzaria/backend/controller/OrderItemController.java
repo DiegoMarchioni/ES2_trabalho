@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/order-items")
+@RequestMapping("/order-items")
 public class OrderItemController {
 
     private final OrderItemService orderItemService;
@@ -25,6 +25,8 @@ public class OrderItemController {
             return ResponseEntity.status(HttpStatus.CREATED).body(saved);
         } catch (IllegalStateException e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+        } catch (Exception e) {
+        	return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(e.getMessage());
         }
     }
 

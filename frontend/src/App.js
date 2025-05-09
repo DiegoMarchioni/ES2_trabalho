@@ -10,7 +10,7 @@ import Reservas from './pages/reservas';
 import Cardapio from './pages/cardapio';
 import Carrinho from './pages/carrinho';
 import Pagamento from './pages/pagamento';
-
+import AddressForm from './pages/addressform';
 
 import './App.css';
 
@@ -28,6 +28,7 @@ function App() {
             <Route path="/cardapio" element={<Cardapio />} />
             <Route path="/carrinho" element={<Carrinho />} />
             <Route path="/pagamento" element={<Pagamento />} />
+            <Route path="/cadastro-endereco" element={<AddressForm />} />
           </Routes>
         </main>
         <Footer />

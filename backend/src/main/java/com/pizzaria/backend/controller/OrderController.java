@@ -33,6 +33,10 @@ public class OrderController {
         }
     }
     @GetMapping
+    public ResponseEntity<Order> getOrder() {
+        return ResponseEntity.ok(orderService.getForAuthenticatedUser());
+    }
+    
     public ResponseEntity<List<Order>> getAllOrders() {
         return ResponseEntity.ok(orderService.getAllForAuthenticatedUser());
     }

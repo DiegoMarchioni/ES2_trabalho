@@ -1,30 +1,33 @@
 // src/components/MenuSection.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../style/menuSection.css';
 
 function MenuSection() {
+  const [dishes, setDishes] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8080/dishes')
+      .then(response => response.json())
+      .then(data => setDishes(data))
+      .catch(error => console.error('Erro ao buscar pratos:', error));
+  }, []);
+
   return (
     <section id="cardapio" className="menu-section">
       <h2>Destaques do Cardápio</h2>
       <div className="cardapio-items">
-        <div className="cardapio-item">
-          <img src="https://via.placeholder.com/300x200?text=Margherita" alt="Pizza Margherita" />
-          <h3>Pizza Margherita</h3>
-          <p>O ícone da verdadeira pizza napolitana, com molho de tomate, mussarela de búfala e manjericão.</p>
-          <a href="/cardapio/margherita" className="btn-secondary">Saiba Mais</a>
-        </div>
-        <div className="cardapio-item">
-          <img src="https://via.placeholder.com/300x200?text=Tortano" alt="Tortano" />
-          <h3>Tortano</h3>
-          <p>Receita tradicional de pão de linguiça napolitana, generosamente recheado e macio.</p>
-          <a href="/cardapio/tortano" className="btn-secondary">Saiba Mais</a>
-        </div>
-        <div className="cardapio-item">
-          <img src="https://via.placeholder.com/300x200?text=Pastiera" alt="Pastiera di Grano" />
-          <h3>Pastiera di Grano</h3>
-          <p>Receita exclusiva da família, um clássico que une tradição e sabor incomparável.</p>
-          <a href="/cardapio/pastiera" className="btn-secondary">Saiba Mais</a>
-        </div>
+        {dishes.map(dish => (
+          <div key={dish.id} className="cardapio-item">
+            <img
+              src={`https://pizzapoint.com.br/wp-content/uploads/2024/05/pizza.png`}
+              alt={dish.name}
+            />
+            <h3>{dish.name}</h3>
+            <p>{dish.description}</p>
+            <p><strong>R$ {dish.price.toFixed(2)}</strong></p>
+            <a href={`/cardapio/`} className="btn-secondary">Saiba Mais</a>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -51,7 +51,10 @@ public class OrderService {
         User user = getAuthenticatedUser();
         return orderRepository.findAllByUser(user);
     }
-
+    public Order getForAuthenticatedUser() {
+        User user = getAuthenticatedUser();
+        return orderRepository.findByUserAndIsPaidFalse(user).orElseThrow();
+    }
     public Optional<Order> getById(Long id) {
         User user = getAuthenticatedUser();
         Optional<Order> orderOpt = orderRepository.findById(id);

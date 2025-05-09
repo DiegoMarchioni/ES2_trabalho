@@ -14,10 +14,12 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "orders")
 public class Order {
@@ -38,6 +40,13 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> items = new ArrayList<>();
 
+    public Order(boolean isPaid, boolean isDelivered, User user, Address deliveryAddress){
+    	this.isPaid = isPaid;
+    	this.isDelivered = isDelivered;
+    	this.user = user;
+    	this.deliveryAddress = deliveryAddress;
+    }
+    
 	public Long getId() {
 		return id;
 	}

@@ -1,33 +1,7 @@
 // src/pages/Carrinho.js
-import React, { useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { CartContext } from '../contexts/cartContexts';
 import { useNavigate } from 'react-router-dom';
-
-
-const simulatedCartItems = [
-  {
-    id: 1,
-    name: 'Pizza Margherita',
-    price: 'R$ 39,90',
-    quantity: 2,
-    image: '/assets/pizza1.jpg',
-  },
-  {
-    id: 2,
-    name: 'Pizza Pepperoni',
-    price: 'R$ 49,90',
-    quantity: 1,
-    image: '/assets/pizza2.jpg',
-  },
-  {
-    id: 3,
-    name: 'Pizza Quatro Queijos',
-    price: 'R$ 59,90',
-    quantity: 3,
-    image: '/assets/pizza3.jpg',
-  },
-];
 
 const PageContainer = styled.div`
   min-height: 100vh;
@@ -115,16 +89,46 @@ const CheckoutButton = styled.button`
 `;
 
 function Carrinho() {
-  //const { cartItems } = useContext(CartContext);  
-  const cartItems = simulatedCartItems;
+  const [token, setToken] = useState('');
+  const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate();
+
+  // Autentica e busca token
+  useEffect(() => {
+    fetch('http://localhost:8080/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ login: 'admin', password: 'mudar123' }),
+    })
+      .then((res) => res.json())
+      .then((data) => setToken(data.token))
+      .catch((err) => console.error('Erro ao autenticar:', err));
+  }, []);
+
+  // Busca os pedidos com token
+  useEffect(() => {
+    if (!token) return;
+
+    fetch('http://localhost:8080/orders', {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((orders) => {
+        // Pega o último pedido com items
+        console.log(orders);
+        setCartItems(orders.items);
+        
+      })
+      .catch((err) => console.error('Erro ao buscar pedidos:', err));
+  }, [token]);
 
   const total = cartItems.reduce(
     (acc, item) =>
-      acc + parseFloat(item.price.replace('R$', '').replace(',', '.')) * item.quantity,
+      acc + parseFloat((item.price + "").replace('R$', '').replace(',', '.')) * item.quantity,
     0
   );
-
-  const navigate = useNavigate();
 
   const handleGoToPayment = () => {
     navigate('/pagamento', { state: { cartItems } });
@@ -140,13 +144,13 @@ function Carrinho() {
         <>
           {cartItems.map((item) => {
             const subtotal =
-              parseFloat(item.price.replace('R$', '').replace(',', '.')) * item.quantity;
+              parseFloat((item.price + "").replace('R$', '').replace(',', '.')) * item.quantity;
 
             return (
               <CartItem key={item.id}>
-                <PizzaImage src={item.image} alt={item.name} />
+                <PizzaImage src="https://pizzapoint.com.br/wp-content/uploads/2024/05/pizza.png" alt={item.name} />
                 <InfoArea>
-                  <PizzaName>{item.name}</PizzaName>
+                  <PizzaName>{item.dish.name}</PizzaName>
                   <PizzaDetails>
                     {item.price} x {item.quantity}
                   </PizzaDetails>

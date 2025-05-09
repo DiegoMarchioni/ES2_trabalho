@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-// Container principal da página
+// Styled Components
 const PageContainer = styled.div`
   min-height: 100vh;
   background: #f9f9f9;
   padding: 40px 20px;
 `;
 
-// Título da página
 const Title = styled.h2`
   text-align: center;
   margin-bottom: 40px;
@@ -17,15 +17,13 @@ const Title = styled.h2`
   color: #333;
 `;
 
-// Exibição simples do carrinho
-const CartInfo = styled.div`
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-  color: #555;
-`;
+// const CartInfo = styled.div`
+//   text-align: center;
+//   margin-bottom: 20px;
+//   font-size: 1.2rem;
+//   color: #555;
+// `;
 
-// Grid responsivo para os itens do cardápio
 const MenuGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -34,7 +32,6 @@ const MenuGrid = styled.div`
   margin: 0 auto;
 `;
 
-// Card de cada item com animação
 const MenuItemCard = styled(motion.div)`
   background: #fff;
   border-radius: 12px;
@@ -44,14 +41,12 @@ const MenuItemCard = styled(motion.div)`
   flex-direction: column;
 `;
 
-// Imagem do item
 const PizzaImage = styled.img`
   width: 100%;
   height: 200px;
   object-fit: cover;
 `;
 
-// Container com as informações do item
 const PizzaInfo = styled.div`
   padding: 20px;
   flex: 1;
@@ -59,14 +54,12 @@ const PizzaInfo = styled.div`
   flex-direction: column;
 `;
 
-// Nome do item
 const PizzaTitle = styled.h3`
   margin: 0 0 10px;
   font-size: 1.8rem;
   color: #e63946;
 `;
 
-// Descrição do item
 const PizzaDescription = styled.p`
   flex: 1;
   font-size: 1rem;
@@ -74,14 +67,12 @@ const PizzaDescription = styled.p`
   margin-bottom: 15px;
 `;
 
-// Preço do item
 const PizzaPrice = styled.div`
   font-size: 1.2rem;
   font-weight: bold;
   color: #333;
 `;
 
-// Botão para adicionar ao carrinho
 const AddButton = styled.button`
   background: #e63946;
   color: #fff;
@@ -97,74 +88,103 @@ const AddButton = styled.button`
 `;
 
 function Cardapio() {
-  // Estado para o carrinho
+  const navigate = useNavigate();
   const [cart, setCart] = useState([]);
+  const [pizzas, setPizzas] = useState([]);
+  const [token, setToken] = useState('');
+  const [loading, setLoading] = useState(true);
 
-  // Dados fictícios dos itens do cardápio
-  const pizzas = [
-    {
-      id: 1,
-      name: 'Pizza Margherita',
-      description: 'Molho de tomate artesanal, mussarela de alta qualidade e folhas de manjericão fresco.',
-      price: 'R$ 39,90',
-      image: '/assets/pizza1.jpg',
-    },
-    {
-      id: 2,
-      name: 'Pizza Pepperoni',
-      description: 'Fatias suculentas de pepperoni, mussarela e molho especial da casa.',
-      price: 'R$ 49,90',
-      image: '/assets/pizza2.jpg',
-    },
-    {
-      id: 3,
-      name: 'Pizza Quatro Queijos',
-      description: 'Uma combinação irresistível de mussarela, cheddar, gorgonzola e parmesão.',
-      price: 'R$ 59,90',
-      image: '/assets/pizza3.jpg',
-    },
-    {
-      id: 4,
-      name: 'Pizza Vegetariana',
-      description: 'Mix de legumes frescos, azeitonas, cebola roxa e pimentões, tudo sobre uma base leve.',
-      price: 'R$ 44,90',
-      image: '/assets/pizza4.jpg',
-    },
-  ];
+  // Autentica e busca o token ao montar
+  useEffect(() => {
+    // Login e obtenção do token
+    fetch('http://localhost:8080/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({ login: 'admin', password: 'mudar123' }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setToken(data.token);
+        console.log(data.token);
+      })
+      .catch((err) => console.error('Erro ao autenticar:', err));
+  }, []);
 
-  // Função para adicionar um item ao carrinho
+  // Busca as pizzas
+  useEffect(() => {
+    fetch('http://localhost:8080/dishes')
+      .then((res) => res.json())
+      .then((data) => {
+        setPizzas(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Erro ao buscar pizzas:', err);
+        setLoading(false);
+      });
+  }, []);
+
   const handleAddToCart = (pizza) => {
     setCart((prevCart) => [...prevCart, pizza]);
-    console.log('Carrinho atual:', [...cart, pizza]);
+
+    const body = {
+      quantity: 1,
+      price: pizza.price,
+      dish: pizza, // estrutura esperada no backend
+    };
+    fetch('http://localhost:8080/order-items', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        "Authorization": `Bearer ${token}`,
+      },
+      body: JSON.stringify(body),
+    })
+      .then((res) => {
+        if (res.status === 417) throw new Error('Erro ao enviar item ao pedido');
+        return res.json();
+      })
+      .then((data) => {
+        console.log('Item adicionado ao pedido com sucesso:', data);
+      })
+      .catch((error) => {
+        navigate("/cadastro-endereco");
+      });
   };
 
   return (
     <PageContainer>
       <Title>Nosso Cardápio</Title>
 
-      {/* Exibe a quantidade atual de itens no carrinho */}
-      <CartInfo>Total de Itens no Carrinho: {cart.length}</CartInfo>
-
-      <MenuGrid>
-        {pizzas.map((pizza, index) => (
-          <MenuItemCard
-            key={pizza.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
-            <PizzaImage src={pizza.image} alt={pizza.name} />
-            <PizzaInfo>
-              <PizzaTitle>{pizza.name}</PizzaTitle>
-              <PizzaDescription>{pizza.description}</PizzaDescription>
-              <PizzaPrice>{pizza.price}</PizzaPrice>
-              <AddButton onClick={() => handleAddToCart(pizza)}>
-                Adicionar ao Carrinho
-              </AddButton>
-            </PizzaInfo>
-          </MenuItemCard>
-        ))}
-      </MenuGrid>
+      {loading ? (
+        <p style={{ textAlign: 'center' }}>Carregando pizzas...</p>
+      ) : (
+        <MenuGrid>
+          {pizzas.map((pizza, index) => (
+            <MenuItemCard
+              key={pizza.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <PizzaImage
+                src={`https://pizzapoint.com.br/wp-content/uploads/2024/05/pizza.png`}
+                alt={pizza.name}
+              />
+              <PizzaInfo>
+                <PizzaTitle>{pizza.name}</PizzaTitle>
+                <PizzaDescription>{pizza.description}</PizzaDescription>
+                <PizzaPrice>
+                  R$ {Number(pizza.price).toFixed(2).replace('.', ',')}
+                </PizzaPrice>
+                <AddButton onClick={() => handleAddToCart(pizza)}>
+                  Adicionar ao Carrinho
+                </AddButton>
+              </PizzaInfo>
+            </MenuItemCard>
+          ))}
+        </MenuGrid>
+      )}
     </PageContainer>
   );
 }
