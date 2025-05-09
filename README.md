@@ -1,3 +1,9 @@
+# Alunos
+
+Diego Marchioni
+Luiza Dias
+Gabriel Rajão
+
 # Tecnologias Utilizadas
 
 Backend: Springboot
