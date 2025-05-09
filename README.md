@@ -1,8 +1,8 @@
 # Alunos
 
-Diego Marchioni
-Luiza Dias
-Gabriel Rajão
+- Diego Marchioni
+- Luiza Dias
+- Gabriel Rajão
 
 # Tecnologias Utilizadas
 
