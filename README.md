@@ -5,12 +5,12 @@ Frontend: React
 APIs: Stripe
 Banco de dados: MySQL
 
-#Requisitos para a Aplicação
+# Requisitos para a Aplicação
 
 Para rodar a aplicação é necessário ter o NPM e o MySQL instalados no seu computador, além disso, é preciso uma secret key e uma public key do Stripe para pagamentos não recorrentes.
 Toda a documentação requisitada para a atividade está presente na pasta "docs" deste repositório.
 
-#Configurações Iniciais
+# Configurações Iniciais
 
 No caminho /backend/src/main/resources/application.properties:
  - Altere as informações do usuário do banco de dados para as informações do seu usuário MySQL (alterar apenas o username, password e a porta caso ela não seja a padrão do MySQL)
