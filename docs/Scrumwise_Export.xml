@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE scrumwise-export PUBLIC "-//Scrumwise//DTD Scrumwise Export 2.5//EN" "http://www.scrumwise.com/dtd/scrumwise-export-2_5.dtd">
+<scrumwise-export>
+  <export-date>Sat, 10 May 2025 00:13:44 GMT</export-date>
+  <data-version>92</data-version>
+  <data>
+    <account>
+      <id>216245</id>
+      <company-name></company-name>
+      <country>BR</country>
+      <phone></phone>
+      <website></website>
+      <contact-person-id>216245-0-5</contact-person-id>
+      <persons>
+        <person>
+          <id>216245-0-5</id>
+          <first-name>Luiza</first-name>
+          <last-name>Corteletti</last-name>
+          <nickname></nickname>
+          <email-address>luiza.corteletti@gmail.com</email-address>
+          <phone></phone>
+          <im></im>
+          <description></description>
+          <photo></photo>
+          <is-activated>true</is-activated>
+          <is-administrator>true</is-administrator>
+          <creator-id></creator-id>
+        </person>
+        <person>
+          <id>216245-1-4</id>
+          <first-name>Diego</first-name>
+          <last-name>Marchioni</last-name>
+          <nickname></nickname>
+          <email-address>diegomarchioni@gmail.com</email-address>
+          <phone></phone>
+          <im></im>
+          <description></description>
+          <photo></photo>
+          <is-activated>false</is-activated>
+          <is-administrator>false</is-administrator>
+          <creator-id>216245-0-5</creator-id>
+        </person>
+        <person>
+          <id>216245-1-10</id>
+          <first-name>Gabriel</first-name>
+          <last-name>Rajao</last-name>
+          <nickname></nickname>
+          <email-address>gabrielrajao@gmail.com</email-address>
+          <phone></phone>
+          <im></im>
+          <description></description>
+          <photo></photo>
+          <is-activated>false</is-activated>
+          <is-administrator>false</is-administrator>
+          <creator-id>216245-0-5</creator-id>
+        </person>
+      </persons>
+      <projects>
+        <project>
+          <id>216245-0-7</id>
+          <name>Pizzaria Speranza</name>
+          <description>Protótipo Funcional do site da pizzaria</description>
+          <external-link></external-link>
+          <rough-effort-unit>Points</rough-effort-unit>
+          <detailed-effort-unit>Days</detailed-effort-unit>
+          <checklists></checklists>
+          <comments></comments>
+          <attachments></attachments>
+          <custom-fields></custom-fields>
+          <people>
+            <roles>
+              <product-owners></product-owners>
+              <stakeholders></stakeholders>
+            </roles>
+            <teams>
+              <team>
+                <id>216245-0-12</id>
+                <name>Team 1</name>
+                <description></description>
+                <team-memberships>
+                  <team-membership>
+                    <id>216245-0-16</id>
+                    <person-id>216245-0-5</person-id>
+                  </team-membership>
+                  <team-membership>
+                    <id>216245-1-21</id>
+                    <person-id>216245-1-4</person-id>
+                  </team-membership>
+                  <team-membership>
+                    <id>216245-1-24</id>
+                    <person-id>216245-1-10</person-id>
+                  </team-membership>
+                </team-memberships>
+              </team>
+            </teams>
+          </people>
+          <tag-definitions></tag-definitions>
+          <messages></messages>
+          <backlogs>
+            <backlog>
+              <id>216245-0-10.0</id>
+              <name>Default backlog</name>
+              <description></description>
+              <is-archived>false</is-archived>
+              <backlog-lists>
+                <backlog-list>
+                  <id>216245-0-10.2</id>
+                  <name>Default backlog list</name>
+                  <description></description>
+                  <is-archived>false</is-archived>
+                  <backlog-items>
+                    <backlog-item>
+                      <id>216245-0-24</id>
+                      <simple-id>1</simple-id>
+                      <parent-epic-id></parent-epic-id>
+                      <name>Primeiro Esboço do Front End</name>
+                      <description></description>
+                      <external-link></external-link>
+                      <priority></priority>
+                      <type>Feature</type>
+                      <creator-id>216245-0-5</creator-id>
+                      <creation-date>Fri, 09 May 2025 23:30:19 GMT</creation-date>
+                      <bug-state></bug-state>
+                      <reproducible></reproducible>
+                      <resolution></resolution>
+                      <release-id></release-id>
+                      <status>Sprint completed</status>
+                      <to-do-date>Fri, 09 May 2025 23:39:57 GMT</to-do-date>
+                      <in-progress-date></in-progress-date>
+                      <to-test-date></to-test-date>
+                      <done-date>Sat, 10 May 2025 00:09:46 GMT</done-date>
+                      <rough-estimate></rough-estimate>
+                      <estimate>2</estimate>
+                      <used-effort></used-effort>
+                      <remaining-effort>0</remaining-effort>
+                      <sprint-id>216245-0-18</sprint-id>
+                      <team-id>216245-0-12</team-id>
+                      <board-id>216245-0-10.4</board-id>
+                      <board-column-id>216245-0-10.10</board-column-id>
+                      <assigned-persons>
+                        <person-id>216245-1-4</person-id>
+                      </assigned-persons>
+                      <due-date></due-date>
+                      <custom-field-values></custom-field-values>
+                      <tags></tags>
+                      <checklists></checklists>
+                      <comments></comments>
+                      <attachments></attachments>
+                      <time-entries></time-entries>
+                      <commits></commits>
+                      <tasks></tasks>
+                      <child-backlog-items></child-backlog-items>
+                    </backlog-item>
+                    <backlog-item>
+                      <id>216245-0-46</id>
+                      <simple-id>3</simple-id>
+                      <parent-epic-id></parent-epic-id>
+                      <name>Criação dos Diagramas</name>
+                      <description></description>
+                      <external-link></external-link>
+                      <priority></priority>
+                      <type>Feature</type>
+                      <creator-id>216245-0-5</creator-id>
+                      <creation-date>Fri, 09 May 2025 23:30:19 GMT</creation-date>
+                      <bug-state></bug-state>
+                      <reproducible></reproducible>
+                      <resolution></resolution>
+                      <release-id></release-id>
+                      <status>Sprint completed</status>
+                      <to-do-date>Fri, 09 May 2025 23:39:55 GMT</to-do-date>
+                      <in-progress-date></in-progress-date>
+                      <to-test-date></to-test-date>
+                      <done-date>Sat, 10 May 2025 00:09:42 GMT</done-date>
+                      <rough-estimate></rough-estimate>
+                      <estimate>1</estimate>
+                      <used-effort></used-effort>
+                      <remaining-effort>0</remaining-effort>
+                      <sprint-id>216245-0-18</sprint-id>
+                      <team-id>216245-0-12</team-id>
+                      <board-id>216245-0-10.4</board-id>
+                      <board-column-id>216245-0-10.10</board-column-id>
+                      <assigned-persons>
+                        <person-id>216245-0-5</person-id>
+                      </assigned-persons>
+                      <due-date></due-date>
+                      <custom-field-values></custom-field-values>
+                      <tags></tags>
+                      <checklists></checklists>
+                      <comments></comments>
+                      <attachments></attachments>
+                      <time-entries></time-entries>
+                      <commits></commits>
+                      <tasks></tasks>
+                      <child-backlog-items></child-backlog-items>
+                    </backlog-item>
+                    <backlog-item>
+                      <id>216245-1-39</id>
+                      <simple-id>5</simple-id>
+                      <parent-epic-id></parent-epic-id>
+                      <name>Inicio do Back End</name>
+                      <description></description>
+                      <external-link></external-link>
+                      <priority></priority>
+                      <type>Feature</type>
+                      <creator-id>216245-0-5</creator-id>
+                      <creation-date>Fri, 09 May 2025 23:38:46 GMT</creation-date>
+                      <bug-state></bug-state>
+                      <reproducible></reproducible>
+                      <resolution></resolution>
+                      <release-id></release-id>
+                      <status>Sprint completed</status>
+                      <to-do-date></to-do-date>
+                      <in-progress-date></in-progress-date>
+                      <to-test-date></to-test-date>
+                      <done-date>Sat, 10 May 2025 00:10:37 GMT</done-date>
+                      <rough-estimate></rough-estimate>
+                      <estimate>3</estimate>
+                      <used-effort></used-effort>
+                      <remaining-effort>0</remaining-effort>
+                      <sprint-id>216245-1-65</sprint-id>
+                      <team-id>216245-0-12</team-id>
+                      <board-id>216245-0-10.4</board-id>
+                      <board-column-id>216245-0-10.10</board-column-id>
+                      <assigned-persons>
+                        <person-id>216245-1-10</person-id>
+                      </assigned-persons>
+                      <due-date></due-date>
+                      <custom-field-values></custom-field-values>
+                      <tags></tags>
+                      <checklists></checklists>
+                      <comments></comments>
+                      <attachments></attachments>
+                      <time-entries></time-entries>
+                      <commits></commits>
+                      <tasks></tasks>
+                      <child-backlog-items></child-backlog-items>
+                    </backlog-item>
+                    <backlog-item>
+                      <id>216245-1-44</id>
+                      <simple-id>6</simple-id>
+                      <parent-epic-id></parent-epic-id>
+                      <name>Finalização Front End</name>
+                      <description></description>
+                      <external-link></external-link>
+                      <priority></priority>
+                      <type>Feature</type>
+                      <creator-id>216245-0-5</creator-id>
+                      <creation-date>Fri, 09 May 2025 23:39:02 GMT</creation-date>
+                      <bug-state></bug-state>
+                      <reproducible></reproducible>
+                      <resolution></resolution>
+                      <release-id></release-id>
+                      <status>Sprint completed</status>
+                      <to-do-date></to-do-date>
+                      <in-progress-date></in-progress-date>
+                      <to-test-date></to-test-date>
+                      <done-date>Sat, 10 May 2025 00:10:31 GMT</done-date>
+                      <rough-estimate></rough-estimate>
+                      <estimate>2</estimate>
+                      <used-effort></used-effort>
+                      <remaining-effort>0</remaining-effort>
+                      <sprint-id>216245-1-65</sprint-id>
+                      <team-id>216245-0-12</team-id>
+                      <board-id>216245-0-10.4</board-id>
+                      <board-column-id>216245-0-10.10</board-column-id>
+                      <assigned-persons>
+                        <person-id>216245-0-5</person-id>
+                      </assigned-persons>
+                      <due-date></due-date>
+                      <custom-field-values></custom-field-values>
+                      <tags></tags>
+                      <checklists></checklists>
+                      <comments></comments>
+                      <attachments></attachments>
+                      <time-entries></time-entries>
+                      <commits></commits>
+                      <tasks></tasks>
+                      <child-backlog-items></child-backlog-items>
+                    </backlog-item>
+                    <backlog-item>
+                      <id>216245-1-49</id>
+                      <simple-id>7</simple-id>
+                      <parent-epic-id></parent-epic-id>
+                      <name>Finalização Back End</name>
+                      <description></description>
+                      <external-link></external-link>
+                      <priority></priority>
+                      <type>Feature</type>
+                      <creator-id>216245-0-5</creator-id>
+                      <creation-date>Fri, 09 May 2025 23:39:27 GMT</creation-date>
+                      <bug-state></bug-state>
+                      <reproducible></reproducible>
+                      <resolution></resolution>
+                      <release-id></release-id>
+                      <status>Sprint completed</status>
+                      <to-do-date>Sat, 10 May 2025 00:11:03 GMT</to-do-date>
+                      <in-progress-date></in-progress-date>
+                      <to-test-date></to-test-date>
+                      <done-date>Sat, 10 May 2025 00:11:39 GMT</done-date>
+                      <rough-estimate></rough-estimate>
+                      <estimate>2</estimate>
+                      <used-effort></used-effort>
+                      <remaining-effort>0</remaining-effort>
+                      <sprint-id>216245-1-80</sprint-id>
+                      <team-id>216245-0-12</team-id>
+                      <board-id>216245-0-10.4</board-id>
+                      <board-column-id>216245-0-10.10</board-column-id>
+                      <assigned-persons>
+                        <person-id>216245-1-10</person-id>
+                      </assigned-persons>
+                      <due-date></due-date>
+                      <custom-field-values></custom-field-values>
+                      <tags></tags>
+                      <checklists></checklists>
+                      <comments></comments>
+                      <attachments></attachments>
+                      <time-entries></time-entries>
+                      <commits></commits>
+                      <tasks></tasks>
+                      <child-backlog-items></child-backlog-items>
+                    </backlog-item>
+                    <backlog-item>
+                      <id>216245-1-54</id>
+                      <simple-id>8</simple-id>
+                      <parent-epic-id></parent-epic-id>
+                      <name>Integração Front e Back End</name>
+                      <description></description>
+                      <external-link></external-link>
+                      <priority></priority>
+                      <type>Feature</type>
+                      <creator-id>216245-0-5</creator-id>
+                      <creation-date>Fri, 09 May 2025 23:39:46 GMT</creation-date>
+                      <bug-state></bug-state>
+                      <reproducible></reproducible>
+                      <resolution></resolution>
+                      <release-id></release-id>
+                      <status>Sprint completed</status>
+                      <to-do-date>Sat, 10 May 2025 00:11:05 GMT</to-do-date>
+                      <in-progress-date></in-progress-date>
+                      <to-test-date></to-test-date>
+                      <done-date>Sat, 10 May 2025 00:11:45 GMT</done-date>
+                      <rough-estimate></rough-estimate>
+                      <estimate>2</estimate>
+                      <used-effort></used-effort>
+                      <remaining-effort>0</remaining-effort>
+                      <sprint-id>216245-1-80</sprint-id>
+                      <team-id>216245-0-12</team-id>
+                      <board-id>216245-0-10.4</board-id>
+                      <board-column-id>216245-0-10.10</board-column-id>
+                      <assigned-persons>
+                        <person-id>216245-1-4</person-id>
+                      </assigned-persons>
+                      <due-date></due-date>
+                      <custom-field-values></custom-field-values>
+                      <tags></tags>
+                      <checklists></checklists>
+                      <comments></comments>
+                      <attachments></attachments>
+                      <time-entries></time-entries>
+                      <commits></commits>
+                      <tasks></tasks>
+                      <child-backlog-items></child-backlog-items>
+                    </backlog-item>
+                    <backlog-item>
+                      <id>216245-1-90</id>
+                      <simple-id>9</simple-id>
+                      <parent-epic-id></parent-epic-id>
+                      <name>Documentação do Trabalho</name>
+                      <description></description>
+                      <external-link></external-link>
+                      <priority></priority>
+                      <type>Feature</type>
+                      <creator-id>216245-0-5</creator-id>
+                      <creation-date>Sat, 10 May 2025 00:11:20 GMT</creation-date>
+                      <bug-state></bug-state>
+                      <reproducible></reproducible>
+                      <resolution></resolution>
+                      <release-id></release-id>
+                      <status>Sprint completed</status>
+                      <to-do-date>Sat, 10 May 2025 00:11:34 GMT</to-do-date>
+                      <in-progress-date></in-progress-date>
+                      <to-test-date></to-test-date>
+                      <done-date>Sat, 10 May 2025 00:11:50 GMT</done-date>
+                      <rough-estimate></rough-estimate>
+                      <estimate>1</estimate>
+                      <used-effort></used-effort>
+                      <remaining-effort>0</remaining-effort>
+                      <sprint-id>216245-1-80</sprint-id>
+                      <team-id>216245-0-12</team-id>
+                      <board-id>216245-0-10.4</board-id>
+                      <board-column-id>216245-0-10.10</board-column-id>
+                      <assigned-persons>
+                        <person-id>216245-0-5</person-id>
+                      </assigned-persons>
+                      <due-date></due-date>
+                      <custom-field-values></custom-field-values>
+                      <tags></tags>
+                      <checklists></checklists>
+                      <comments></comments>
+                      <attachments></attachments>
+                      <time-entries></time-entries>
+                      <commits></commits>
+                      <tasks></tasks>
+                      <child-backlog-items></child-backlog-items>
+                    </backlog-item>
+                  </backlog-items>
+                </backlog-list>
+              </backlog-lists>
+            </backlog>
+          </backlogs>
+          <releases></releases>
+          <sprints>
+            <sprint>
+              <id>216245-0-18</id>
+              <name>Sprint 1</name>
+              <description></description>
+              <external-link></external-link>
+              <start-date>Thu, 01 May 2025 00:00:00 GMT</start-date>
+              <end-date>Sat, 03 May 2025 00:00:00 GMT</end-date>
+              <board-id>216245-0-10.4</board-id>
+              <status>Completed</status>
+              <custom-field-values></custom-field-values>
+              <tags></tags>
+              <checklists></checklists>
+              <comments></comments>
+              <attachments></attachments>
+              <team-sprint-participations>
+                <team-sprint-participation>
+                  <id>216245-0-12_0-18</id>
+                  <team-id>216245-0-12</team-id>
+                  <available-effort>2</available-effort>
+                  <assigned-backlog-items>
+                    <backlog-item-id>216245-0-46</backlog-item-id>
+                    <backlog-item-id>216245-0-24</backlog-item-id>
+                  </assigned-backlog-items>
+                </team-sprint-participation>
+              </team-sprint-participations>
+            </sprint>
+            <sprint>
+              <id>216245-1-65</id>
+              <name>Sprint 2</name>
+              <description></description>
+              <external-link></external-link>
+              <start-date>Sun, 04 May 2025 00:00:00 GMT</start-date>
+              <end-date>Tue, 06 May 2025 00:00:00 GMT</end-date>
+              <board-id>216245-0-10.4</board-id>
+              <status>Completed</status>
+              <custom-field-values></custom-field-values>
+              <tags></tags>
+              <checklists></checklists>
+              <comments></comments>
+              <attachments></attachments>
+              <team-sprint-participations>
+                <team-sprint-participation>
+                  <id>216245-0-12_1-65</id>
+                  <team-id>216245-0-12</team-id>
+                  <available-effort>2</available-effort>
+                  <assigned-backlog-items>
+                    <backlog-item-id>216245-1-39</backlog-item-id>
+                    <backlog-item-id>216245-1-44</backlog-item-id>
+                  </assigned-backlog-items>
+                </team-sprint-participation>
+              </team-sprint-participations>
+            </sprint>
+            <sprint>
+              <id>216245-1-80</id>
+              <name>Sprint 3</name>
+              <description></description>
+              <external-link></external-link>
+              <start-date>Wed, 07 May 2025 00:00:00 GMT</start-date>
+              <end-date>Fri, 09 May 2025 00:00:00 GMT</end-date>
+              <board-id>216245-0-10.4</board-id>
+              <status>Completed</status>
+              <custom-field-values></custom-field-values>
+              <tags></tags>
+              <checklists></checklists>
+              <comments></comments>
+              <attachments></attachments>
+              <team-sprint-participations>
+                <team-sprint-participation>
+                  <id>216245-0-12_1-80</id>
+                  <team-id>216245-0-12</team-id>
+                  <available-effort>3</available-effort>
+                  <assigned-backlog-items>
+                    <backlog-item-id>216245-1-49</backlog-item-id>
+                    <backlog-item-id>216245-1-54</backlog-item-id>
+                    <backlog-item-id>216245-1-90</backlog-item-id>
+                  </assigned-backlog-items>
+                </team-sprint-participation>
+              </team-sprint-participations>
+            </sprint>
+          </sprints>
+          <boards>
+            <board>
+              <id>216245-0-10.4</id>
+              <name>Default task board</name>
+              <description></description>
+              <type>Scrum</type>
+              <board-columns>
+                <board-column>
+                  <id>216245-0-10.6</id>
+                  <name>To do</name>
+                  <description></description>
+                  <status>To do</status>
+                </board-column>
+                <board-column>
+                  <id>216245-0-10.8</id>
+                  <name>In progress</name>
+                  <description></description>
+                  <status>In progress</status>
+                </board-column>
+                <board-column>
+                  <id>216245-0-10.10</id>
+                  <name>Done</name>
+                  <description></description>
+                  <status>Done</status>
+                </board-column>
+              </board-columns>
+            </board>
+          </boards>
+          <retrospectives></retrospectives>
+          <files></files>
+          <relationships></relationships>
+        </project>
+      </projects>
+    </account>
+  </data>
+</scrumwise-export>

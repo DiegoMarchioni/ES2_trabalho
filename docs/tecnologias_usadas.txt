@@ -1,0 +1,6 @@
+Tecnologias usadas no trabalho:
+- Gradle
+- Java
+- Css
+- React
+- SGBD MySQL
